@@ -1,0 +1,72 @@
+{
+  "name": "dsh-long-term-memory",
+  "version": "0.1.0",
+  "description": "Long-term memory box for DeepSeek Harness settings — text typed here is injected into the system prompt of every new session, in every workspace. · DSH 设置页的「长时记忆」输入框：填一次，之后每个新会话都带着它。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis-plugin",
+    "long-term-memory",
+    "memory",
+    "system-prompt",
+    "settings",
+    "prompt-injection"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yang-Yin734/dsh-long-term-memory.git"
+  },
+  "homepage": "https://github.com/Yang-Yin734/dsh-long-term-memory#readme",
+  "bugs": {
+    "url": "https://github.com/Yang-Yin734/dsh-long-term-memory/issues"
+  },
+  "author": "Yang-Yin734",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

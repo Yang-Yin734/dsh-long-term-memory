@@ -1,0 +1,32 @@
+# 构建产物与依赖
+node_modules/
+dist/
+*.tgz
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地调试残留
+*.log
+*.bak
+*.bak-*
+.probe-out/
+.pptx-build-*/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# 本地凭据（绝不入库）
+.env
+.env.*
+!.env.example
+*.p12
+*.pem
+*.key
+*.keystore
+*.jks
+secrets/
